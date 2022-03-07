@@ -1,16 +1,16 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "rootDir": "./src",
-      "outDir": "./build",
-      "esModuleInterop": true,
-      "strict": true,
-      "baseUrl": "./src"
-    },
-    "include": ["src", "src/**/*.ts"],
-    "exclude": ["node_modules", ".vscode"],
-    "ts-node": {
-      "require": ["tsconfig-paths/register"]
-    }
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "outDir": "./build",
+    "esModuleInterop": true,
+    "strict": true,
+    "baseUrl": "./src"
+  },
+  "include": ["src", "src/**/*.ts"],
+  "exclude": ["node_modules", ".vscode"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
 }
