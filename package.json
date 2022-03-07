@@ -7,7 +7,7 @@
     "dev": "nodemon --config nodemon.json src/index.ts",
     "build": "tsc -p tsconfig.json",
     "start": "NODE_ENV=production node dist/index.js",
-    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "lint": "eslint \"**/*.{js,jsx}\"",
     "test": "jest tests NODE_ENV=test --setupFiles dotenv/config"
   },
   "keywords": [],
@@ -54,5 +54,37 @@
       "node_modules",
       "src"
     ]
+  },
+  "eslintConfig": {
+      "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "endOfLine": "auto"
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": "off"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true
   }
 }
