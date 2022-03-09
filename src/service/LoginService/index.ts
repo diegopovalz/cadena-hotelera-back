@@ -1,4 +1,4 @@
-import { LoginInfoRepository } from 'repository/login-repository';
+import { LoginInfoRepository } from 'repository/Login/login-repository';
 
 async function verifyLoginInfo(username: string, password: string) {
   const loginInfo = await LoginInfoRepository.findOne({

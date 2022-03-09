@@ -7,7 +7,7 @@ interface LoginInfo {
 }
 
 const schema = new Schema<LoginInfo>({
-  username: { type: String, required: true },
+  username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: String, required: true },
 });

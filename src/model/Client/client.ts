@@ -5,7 +5,7 @@ interface Client {
   documentNumber: string;
   name: string;
   lastName: string;
-  userId: string;
+  username: string;
 }
 
 const schema = new Schema<Client>({
@@ -13,7 +13,7 @@ const schema = new Schema<Client>({
   documentNumber: { type: String, required: true },
   name: { type: String, required: true },
   lastName: { type: String, required: true },
-  userId: { type: String },
+  username: { type: String },
 });
 
 schema.set('toJSON', {

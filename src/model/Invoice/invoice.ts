@@ -1,14 +1,14 @@
 import { Schema } from 'mongoose';
 
 interface Invoice {
-  hotelId: string;
-  clientId: string;
+  hotelId: number;
+  clientId: number;
   pricePaid: number;
 }
 
 const schema = new Schema<Invoice>({
-  hotelId: { type: String, required: true },
-  clientId: { type: String, required: true },
+  hotelId: { type: Number, required: true },
+  clientId: { type: Number, required: true },
   pricePaid: { type: Number, required: true },
 });
 
