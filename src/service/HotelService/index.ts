@@ -7,8 +7,8 @@ async function getHotels(location: string) {
   return hotels;
 }
 
-async function getHotelById(id: string) {
-  const hotel = await HotelRepository.findById(+id).exec();
+async function getHotelById(id: number) {
+  const hotel = await HotelRepository.findById(id).exec();
   return hotel;
 }
 

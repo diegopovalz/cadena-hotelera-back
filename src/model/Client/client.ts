@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
 
 interface Client {
+  _id: number;
   documentType: string;
   documentNumber: string;
   name: string;
@@ -9,6 +10,7 @@ interface Client {
 }
 
 const schema = new Schema<Client>({
+  _id: { type: Number, required: true },
   documentType: { type: String, required: true },
   documentNumber: { type: String, required: true },
   name: { type: String, required: true },

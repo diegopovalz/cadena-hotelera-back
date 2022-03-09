@@ -9,7 +9,7 @@ async function getHotels(req: Request, res: Response) {
 
 async function getHotelById(req: Request, res: Response) {
   const { id } = req.params;
-  const hotel = await HotelService.getHotelById(id);
+  const hotel = await HotelService.getHotelById(+id);
   return res.json({ hotel });
 }
 
