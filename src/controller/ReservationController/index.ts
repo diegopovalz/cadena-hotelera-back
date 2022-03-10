@@ -39,19 +39,30 @@ async function createReservation(req: Request, res: Response) {
 
   const savedInvoice = await InvoiceService.createInvoice(invoice);
 
-  return res.status(201).json({ savedReservation, invoice: savedInvoice._id });
+  return res.status(201).json({ savedReservation, invoice: savedInvoice });
 }
 
 async function getReservations(req: Request, res: Response) {
   const { clientId } = req.body;
-  const reservations = await ReservationService.getReservations(+clientId);
+  const results = await ReservationService.getReservations(+clientId);
+  const reservations = [];
+  for (const result of results) {
+    const { hotelId } = result;
+    const hotelInfo = await HotelService.getHotelById(hotelId);
+    reservations.push({ reservation: result, hotelInfo });
+  }
   return res.json(reservations);
 }
 
 async function getReservation(req: Request, res: Response) {
   const { id } = req.params;
   const reservation = await ReservationService.getReservation(id);
-  return res.json(reservation);
+  if (!reservation) {
+    return res.json({ error: 'Reservation not found' });
+  }
+  const hotelId = reservation.hotelId;
+  const hotelInfo = await HotelService.getHotelById(hotelId);
+  return res.json({ reservation, hotelInfo });
 }
 
 export default {

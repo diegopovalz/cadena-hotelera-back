@@ -31,8 +31,17 @@ async function getClient(documentType: string, documentNumber: string) {
   return result;
 }
 
+async function getClientByUsername(username: string) {
+  const result = await ClientModel.findOne({
+    username: username,
+  }).exec();
+
+  return result;
+}
+
 export default {
   createClient,
   clientExists,
   getClient,
+  getClientByUsername,
 };

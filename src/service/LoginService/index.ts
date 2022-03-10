@@ -1,4 +1,5 @@
 import { LoginInfoRepository } from 'repository/Login/login-repository';
+import ClientService from 'service/ClientService';
 
 async function verifyLoginInfo(username: string, password: string) {
   const loginInfo = await LoginInfoRepository.findOne({
@@ -7,7 +8,8 @@ async function verifyLoginInfo(username: string, password: string) {
   }).exec();
 
   if (loginInfo) {
-    return { loginInfo };
+    const clientInfo = await ClientService.getClientByUsername(username);
+    return { loginInfo, clientInfo };
   }
   return { error: 'Info not right' };
 }

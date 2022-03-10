@@ -3,8 +3,8 @@ import LoginController from '../../controller/LoginController';
 
 const router = Router();
 
-// GET routes
-router.get('/', LoginController.verifyLoginInfo);
+// POST routes
+router.post('/', LoginController.verifyLoginInfo);
 
 const searchRoutes = { uri: 'login', uriRouter: router };
 
