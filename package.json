@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "NODE_ENV=production node dist/index.js",
+    "start": "NODE_ENV=production node build/index.js",
     "lint": "eslint \"**/*.{js,jsx}\"",
     "test": "jest tests NODE_ENV=test --setupFiles dotenv/config"
   },
