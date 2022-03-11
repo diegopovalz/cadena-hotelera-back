@@ -13,7 +13,7 @@ const main = async () => {
   }
 
   app.listen(PORT, () => {
-    console.log(`[server] server is running at http://localhost:${PORT}`);
+    console.log(`[server] server is running on Port ${PORT}`);
   });
 
   process.on('uncaughtException', async (error: Error) => {
