@@ -8,7 +8,10 @@ const app = express();
 app.use(helmet());
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin:
+      process.env.NODE_ENV === 'production'
+        ? process.env.CLIENT_URL_PROD
+        : process.env.CLIENT_URL_DEV,
   })
 );
 app.use(express.json());
