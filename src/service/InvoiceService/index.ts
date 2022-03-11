@@ -1,5 +1,5 @@
-import { Invoice } from 'model/Invoice/invoice';
-import { InvoiceRepository as InvoiceModel } from 'repository/Invoice/invoice-repository';
+import { Invoice } from '../../model/Invoice/invoice';
+import { InvoiceRepository as InvoiceModel } from '../../repository/Invoice/invoice-repository';
 
 async function createInvoice(invoice: Invoice) {
   const lastInsert = await InvoiceModel.findOne()

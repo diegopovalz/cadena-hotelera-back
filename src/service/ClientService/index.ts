@@ -1,5 +1,5 @@
-import { Client } from 'model/Client/client';
-import { ClientRepository as ClientModel } from 'repository/Client/client-repository';
+import { Client } from '../../model/Client/client';
+import { ClientRepository as ClientModel } from '../../repository/Client/client-repository';
 
 async function createClient(client: Client) {
   const lastInsert = await ClientModel.findOne()

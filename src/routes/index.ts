@@ -1,7 +1,7 @@
 import { Express } from 'express';
-import hotelRoutes from 'routes/Hotel';
-import reservationRoutes from 'routes/Reservation';
-import loginRoutes from 'routes/Login';
+import hotelRoutes from '../routes/Hotel';
+import reservationRoutes from '../routes/Reservation';
+import loginRoutes from '../routes/Login';
 
 const routes = [hotelRoutes, reservationRoutes, loginRoutes];
 

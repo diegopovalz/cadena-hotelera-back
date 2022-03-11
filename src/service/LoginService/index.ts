@@ -1,5 +1,5 @@
-import { LoginInfoRepository } from 'repository/Login/login-repository';
-import ClientService from 'service/ClientService';
+import { LoginInfoRepository } from '../../repository/Login/login-repository';
+import ClientService from '../../service/ClientService';
 
 async function verifyLoginInfo(username: string, password: string) {
   const loginInfo = await LoginInfoRepository.findOne({

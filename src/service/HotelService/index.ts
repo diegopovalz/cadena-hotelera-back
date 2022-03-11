@@ -1,4 +1,4 @@
-import { HotelRepository } from 'repository/Hotel/hotel-repository';
+import { HotelRepository } from '../../repository/Hotel/hotel-repository';
 
 async function getHotels(location: string) {
   const hotels = await HotelRepository.find({

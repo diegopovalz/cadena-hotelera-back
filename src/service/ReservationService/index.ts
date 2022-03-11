@@ -1,5 +1,5 @@
-import { Reservation } from 'model/Reservation/reservation';
-import { ReservationRepository as ReservationModel } from 'repository/Reservation/reservation-repository';
+import { Reservation } from '../../model/Reservation/reservation';
+import { ReservationRepository as ReservationModel } from '../../repository/Reservation/reservation-repository';
 
 async function createReservation(reservation: Reservation) {
   const lastInsert = await ReservationModel.findOne()

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import LoginService from 'service/LoginService';
+import LoginService from '../../service/LoginService';
 
 async function verifyLoginInfo(req: Request, res: Response) {
   const { username, password } = req.body;

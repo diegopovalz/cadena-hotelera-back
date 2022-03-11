@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import ReservationService from 'service/ReservationService';
-import ClientService from 'service/ClientService';
-import InvoiceService from 'service/InvoiceService';
-import HotelService from 'service/HotelService';
+import ReservationService from '../../service/ReservationService';
+import ClientService from '../../service/ClientService';
+import InvoiceService from '../../service/InvoiceService';
+import HotelService from '../../service/HotelService';
 
 async function createReservation(req: Request, res: Response) {
   const { reservation } = req.body;
