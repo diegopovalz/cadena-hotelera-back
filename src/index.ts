@@ -7,7 +7,7 @@ const main = async () => {
 
   try {
     await connect();
-    console.log(`[mongo] database connected`);
+    console.log(`[mongo] database connected!`);
   } catch (err: any) {
     console.error('[mongo error]', err);
   }
