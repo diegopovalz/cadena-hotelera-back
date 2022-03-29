@@ -14,7 +14,17 @@ async function getHotelById(id: number) {
   return hotel;
 }
 
+async function removeRoomAvailabilityToHotel(
+  id: number,
+  newRoomsAvailable: number
+) {
+  await HotelRepository.findByIdAndUpdate(id, {
+    roomsAvailable: newRoomsAvailable,
+  });
+}
+
 export default {
   getHotels,
   getHotelById,
+  removeRoomAvailabilityToHotel,
 };

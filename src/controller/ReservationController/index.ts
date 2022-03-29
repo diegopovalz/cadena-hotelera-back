@@ -37,6 +37,16 @@ async function createReservation(req: Request, res: Response) {
     pricePaid: hotel?.costPerRoom,
   };
 
+  const newRoomsAvailable =
+    hotel?.roomsAvailable && hotel?.roomsAvailable > 0
+      ? hotel?.roomsAvailable - 1
+      : 0;
+
+  HotelService.removeRoomAvailabilityToHotel(
+    savedReservation.hotelId,
+    newRoomsAvailable
+  );
+
   const savedInvoice = await InvoiceService.createInvoice(invoice);
 
   return res.status(201).json({ savedReservation, invoice: savedInvoice });
