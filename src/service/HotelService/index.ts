@@ -3,7 +3,9 @@ import { HotelRepository } from '../../repository/Hotel/hotel-repository';
 async function getHotels(location: string) {
   const hotels = await HotelRepository.find({
     place: { $regex: '.*' + location + '.*', $options: 'i' },
-  }).exec();
+  })
+    .gt('roomsAvailable', 0)
+    .exec();
   return hotels;
 }
 
