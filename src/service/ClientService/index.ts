@@ -8,18 +8,24 @@ async function createClient(client: Client) {
     .exec();
 
   client._id = lastInsert ? +lastInsert._id + 1 : 1;
+
+  const username = `${
+    client.name.toLocaleLowerCase()[0]
+  }${client.lastName.toLocaleLowerCase()}`;
+  client.username = username;
+
   const savedClient = new ClientModel(client);
   const result = await savedClient.save();
   return result;
 }
 
 async function clientExists(documentType: string, documentNumber: string) {
-  const exists = ClientModel.exists({
+  const client = await ClientModel.findOne({
     documentType: documentType,
     documentNumber: documentNumber,
   }).exec();
 
-  return exists;
+  return !!client;
 }
 
 async function getClient(documentType: string, documentNumber: string) {

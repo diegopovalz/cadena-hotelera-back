@@ -10,11 +10,11 @@ interface Client {
 }
 
 const schema = new Schema<Client>({
-  _id: { type: Number, required: true },
-  documentType: { type: String, required: true },
-  documentNumber: { type: String, required: true },
-  name: { type: String, required: true },
-  lastName: { type: String, required: true },
+  _id: { type: Number },
+  documentType: { type: String },
+  documentNumber: { type: String },
+  name: { type: String },
+  lastName: { type: String },
   username: { type: String },
 });
 
